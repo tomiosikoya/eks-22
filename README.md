@@ -10,7 +10,7 @@
 
 
 
-# eks-22
+# eks-tomi
 # Create EKS Cluster with Node Groups
 
 ## Step-00: Introduction
@@ -29,7 +29,7 @@
 - It will take 15 to 20 minutes to create the Cluster Control Plane 
 ```
 # Create Cluster
-eksctl create cluster --name=myeks22 \
+eksctl create cluster --name=myekstomi \
                       --region=us-east-1 \
                       --zones=us-east-1a,us-east-1b \
                       --without-nodegroup 
@@ -47,7 +47,7 @@ eksctl get clusters
 # Replace with region & cluster name
 eksctl utils associate-iam-oidc-provider \
     --region us-east-1 \
-    --cluster myeks22 \
+    --cluster myekstomi \
     --approve
 ```
 
@@ -62,9 +62,9 @@ eksctl utils associate-iam-oidc-provider \
 - These add-ons will create the respective IAM policies for us automatically within our Node Group role.
  ```
 # Create Public Node Group   
-eksctl create nodegroup --cluster=myeks22 \
+eksctl create nodegroup --cluster=myekstomi \
                         --region=us-east-1 \
-                        --name=myeks22-ng-public1 \
+                        --name=myekstomi-ng-public1 \
                         --node-type=t3.medium \
                         --nodes=2 \
                         --nodes-min=2 \
