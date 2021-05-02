@@ -51,14 +51,14 @@ eksctl utils associate-iam-oidc-provider \
 # Create Public Node Group   
 eksctl create nodegroup --cluster=tomi \
                         --region=us-east-1 \
-                        --name=myeksteni-ng-public1 \
+                        --name=myekstomi-ng-public1 \
                         --node-type=t3.medium \
                         --nodes=2 \
                         --nodes-min=2 \
                         --nodes-max=14 \
                         --node-volume-size=20 \
                         --ssh-access \
-                        --ssh-public-key=mykey \
+                        --ssh-public-key=eks \
                         --managed \
                         --asg-access \
                         --external-dns-access \
